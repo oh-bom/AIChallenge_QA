@@ -6,7 +6,7 @@ from pages.LoginPage import LoginPage
 class TestPerformance():
     
     @allure.feature("Login")
-    @allure.story("세션 타임아웃")
+    @allure.story("부하 테스트")
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.performance
     def test_performance(self):

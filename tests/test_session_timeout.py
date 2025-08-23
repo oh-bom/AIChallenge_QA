@@ -7,7 +7,7 @@ from pages.MyPage import MyPage
 class TestSessionTimeout:
     
     @allure.feature("Login")
-    @allure.story("부하 테스트")
+    @allure.story("세션 타임아웃")
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.session
     def test_session_timeout(self):
