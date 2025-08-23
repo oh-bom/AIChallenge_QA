@@ -25,11 +25,8 @@ coverage.xml
 .env
 *.env
 
-# Selenium/Allure/HTML 리포트
-reports/
-allure-report/
-*.html
-
 # Mac/Windows
 .DS_Store
 Thumbs.db
+
+screenshots/
