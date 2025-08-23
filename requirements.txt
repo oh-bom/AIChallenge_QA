@@ -1,5 +1,5 @@
 selenium
 pytest
-pytest-html
 python-dotenv
+pytest-html
 allure-pytest

@@ -1,10 +1,13 @@
-import pytest,time
+import pytest,time,allure
 from pages.LoginPage import LoginPage
 
 @pytest.mark.order(3)
 @pytest.mark.usefixtures("setup","load_test_data")
 class TestPerformance():
     
+    @allure.feature("Login")
+    @allure.story("세션 타임아웃")
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.performance
     def test_performance(self):
         login_page=LoginPage(self.driver,self.base_url)
