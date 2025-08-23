@@ -1,0 +1,10 @@
+{
+    "loginPage":{
+        "ID_INPUT":{"by":"id","value":"memberId"},
+        "PW_INPUT":{"by":"id","value":"memberPassword"},
+        "LOGIN_BTN":{"by":"xpath","value":"//button[@type='submit']"}
+    },
+    "homePage":{
+        "MY_PAGE_BUTTON":{"by":"xpath","value":"//div[@class='BottomNavigation_bottom-fixed-container__MAHFP']//a[4]"}
+    }
+}

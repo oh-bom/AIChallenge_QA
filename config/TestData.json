@@ -1,0 +1,58 @@
+{
+  "common":{
+    "valid_id": "spdlqj888888",
+    "valid_pw": "albamon0721",
+    "invalid_id":"invalid_id",
+    "invalid_pw":"invalid_pw",
+    "expected_error_msg":"아이디 또는 비밀번호가 일치하지 않습니다. 입력 내용을 다시 확인해 주세요.",
+    "session_timeout":"100",
+    "login_trial_limit":"2"
+  },
+  
+  "scenarios":{
+      "empty_id":{
+        "id":"",
+        "pw":"valid_pw",
+        "expected_error_msg":"아이디를 입력해 주세요."
+      },
+      "empty_pw":{
+        "id":"valid_id",
+        "pw":"",
+        "expected_error_msg":"비밀번호를 입력해 주세요."
+      },
+      "boundary_id":{
+        "short_id":"abc",
+        "long_id":"abcd12345678901234",
+        "pw":"valid_pw",
+        "expected_error_msg":"아이디는 6~16자여야 합니다"
+      },
+      "boundary_pw":{
+        "id":"valid_id",
+        "short_pw":"short1!",
+        "long_pw":"longpassword123456!",
+        "expected_error_msg":"비밀번호는 8~16자여야 합니다"
+      },
+      "consecutive_invalid_pw":{
+        "invalid_pw_list": ["wrong_pw1", "wrong_pw2","wrong_pw3","wrong_pw4","wrong_pw5",
+                            "wrong_pw6", "wrong_pw7", "wrong_pw8","wrong_pw9","wrong_pw10"],
+        "expected_error_msg":"연속된 로그인 실패로 로그인이 일시적으로 차단되었습니다.",
+        "expected_error_msg2":"님의 로그인 횟수가 초과되어 비밀번호를 변경하셔야만 로그인할 수 있습니다.비밀번호를 변경하고 다시 로그인하시길 바랍니다."
+      },
+      "sql_injection":{
+        "sql_injection_id": "' OR '1'='1",
+        "sql_injection_pw": "valid_pw"
+      },
+      "xss_attack":{
+        "xss_attack_id": "<script>alert('XSS')</script>",
+        "xss_attack_pw": "valid_pw",
+        "expected_error_msg":"Invalid JSON format"
+      },
+      "session_timeout":{
+        "expected_error_msg":"세션이 만료되었습니다."
+      },
+      "multi_session":{
+        "expected_error_msg":"다른 브라우저에서 로그인이 되어있습니다. "
+      }
+  }
+
+}
