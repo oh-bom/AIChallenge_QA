@@ -32,6 +32,7 @@ pip install -r requirements.txt
 * 입력값 유효성 검증 (아이디/비밀번호 누락, 글자수 제한)
 * 보안 검증 (SQL Injection, XSS, 다중 로그인, 세션 타임아웃)
 * 성능 검증 (응답속도)
+* 호환성 검증(모바일 기기별 UI)
 * 로그인 실패 시 오류 메시지 출력
 * 로그인 성공 시 마이페이지(`/personal/mypage`) 이동
 
